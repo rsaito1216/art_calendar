@@ -1,0 +1,37 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>名字をカタカナで記載してください。記載していただくと、急病などで営業出来ない場合は連絡先が分かれば店主から連絡が出来ます。名前を表示したくなければ空欄でも構いません。
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>髭剃りのみの短時間、白髪染めの長時間、など特別な事をする場合は記載してください
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.datetime_select :start_date, start_hour: 9, end_hour: 18, ampm: true, minute_step: 15 %>開店時間９：００
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.datetime_select :end_date ,start_hour: 9, end_hour: 19, ampm: true, minute_step: 15 %>閉店時間１９：００
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>←予約決定ボタン
+  </div>
+<% end %>
