@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar.render();
 
 });
-setInterval(1000);
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
