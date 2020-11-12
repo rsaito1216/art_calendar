@@ -6,9 +6,9 @@
     <tr>
       <th>名前</th>
       <th>説明</th>
-      <th>カット開始時間</th>
-      <th>カット終了時間</th>
-      <th colspan="15"></th>
+      <th>開始時間</th>
+      <th>終了時間</th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -26,7 +26,11 @@
           <% end %>
         </tr>
       <% end %>
+      <% else if %>
+      <h1>登録している予約はありません</h1>
+      <% end %>
     <% end %>
   </tbody>
 </table>
+<font size="4"><%= link_to 'ページを戻る', events_path %></font>
 </div>

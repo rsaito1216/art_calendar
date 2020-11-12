@@ -14,7 +14,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
     
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("turbolinks:load", function() {
   var calendarEl = document.getElementById('calendar');
   let calendar = new Calendar(calendarEl, {
     plugins: [ timeGridPlugin ],
@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
   calendar.render();
 
 });
-
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

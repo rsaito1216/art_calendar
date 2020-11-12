@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :login_check, only: [:new]
 
   # GET /events
   # GET /events.json
@@ -25,7 +26,12 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+    if @event.valid?
+      @event.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -70,5 +76,12 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def event_params
       params.require(:event).permit(:title, :description, :start_date, :end_date).merge(user_id: current_user.id)
+    end
+
+    def login_check
+      unless user_signed_in?
+        flash[:alert] = "出品するにはログインか新規登録をしてください"
+        redirect_to new_user_session_path
+      end
     end
 end
