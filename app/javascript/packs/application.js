@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     locale:'ja',
     timeZone: 'Asia/Tokyo',
     allDaySlot: false,
-    slotMinTime: "07:00:00",
-    slotMaxTime: "21:00:00",
+    contentHeight: 500,
+    slotMinTime: "08:00:00",
+    slotMaxTime: "20:00:00",
     businessHours: {
       // days of week. an array of zero-based day of week integers (0=Sunday)
       daysOfWeek: [ 0, 2, 3, 4, 5, 6 ], 
