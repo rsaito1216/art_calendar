@@ -26,15 +26,10 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    if @event.valid?
-      @event.save
-      redirect_to root_path
-    else
-      render 'new'
-    end
+    
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: '予約の登録が出来ました。' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }

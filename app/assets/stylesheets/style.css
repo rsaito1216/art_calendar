@@ -767,7 +767,7 @@ header.header div.header__bar.row div.grid-6 {
 }
 
 header.header div.header__bar.row div.grid-6 a.post {
-  width: 120px;
+  width: 145px;
   display: inline-left;
   margin-left: 10px;
 }
@@ -782,7 +782,7 @@ header.header .user_nav span {
   top: 5px;
   display: block;
   float: left;
-  margin-left: 30px;
+  margin-left: 10px;
   width: 150px;
   height: 50px;
   font-size: 1em;
@@ -1063,4 +1063,52 @@ footer p {
   font-weight: bold;
   text-align: center;
   color: goldenrod;
+}
+
+.items-sell-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.items-sell-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 240px;
+  margin-bottom: 10px;
+}
+
+.new-items {
+  padding: 2vh 0;
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.items-detail {
+  display: flex;
+  padding: 2vh 0;
+}
+
+.items-detail>.form {
+  width: 150px;
+  padding: 10px 0;
+}
+
+.select-box {
+  padding-left: 10px;
+  margin: 1vh 0;
 }

@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% if @events.length != 0 %>
+    <% if @events.present? %>
       <% @events.each do |event| %>
         <tr>
           <td><%= event.title %></td>
@@ -22,7 +22,7 @@
           <td><%= event.end_date %></td>
           <% if user_signed_in? && current_user.id == event.user_id %>
             <td><%= link_to '予約変更', edit_event_path(event) %></td>
-            <td><%= link_to '予約取り消し', event, method: :delete, data: { confirm: '予約を取り消すと元に戻せません。本当に取り消しますか？' } %></td>
+            <td><%= link_to '予約取り消し', event_path(event), method: :delete, data: { confirm: '予約を取り消すと元に戻せません。本当に取り消しますか？' } %></td>
           <% end %>
         </tr>
       <% end %>

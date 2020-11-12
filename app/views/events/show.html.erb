@@ -22,5 +22,6 @@
 
 <% if user_signed_in? && current_user.id == @event.user_id %>
   <%= link_to '予約変更', edit_event_path(@event) %> |
+  <%= link_to '予約取り消し', event_path(@event), method: :delete, data: { confirm: '予約を取り消すと元に戻せません。本当に取り消しますか？' } %> |
 <% end %>
 <%= link_to 'ページを戻る', events_path %>
