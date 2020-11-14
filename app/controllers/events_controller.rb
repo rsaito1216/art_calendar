@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :login_check, only: [:new]
+  before_action :no_edit_user, only: [:edit]
 
   # GET /events
   # GET /events.json
@@ -77,6 +78,12 @@ class EventsController < ApplicationController
       unless user_signed_in?
         flash[:alert] = "予約するにはログインか新規登録をしてください"
         redirect_to new_user_session_path
+      end
+    end
+
+    def no_edit_user
+      if user_signed_in? && (!(current_user.id == @event.user_id))
+        redirect_to root_path
       end
     end
 end

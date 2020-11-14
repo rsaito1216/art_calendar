@@ -22,7 +22,7 @@
       <div class="items-explain">
         <div class="weight-bold-text">
           説明
-          <span class="indispensable">空欄OK</span> 「髭剃りのみ」(の場合３０分)、「白髪染めを希望」、など通常のカットコース以外を希望する場合は記載してください
+          <span class="indispensable">空欄OK</span> 「髭剃りのみ希望(←この場合３０分)」、「白髪染めを希望(←この場合９０分)」、など通常のカットコース以外を希望する場合は記載してください。
         </div>
         <%= form.text_area :description, class:"items-text", id:"item-info", placeholder:"(30文字まで)" ,rows:"2" ,maxlength:"30" %>
       </div>
@@ -39,7 +39,7 @@
         <div class="weight-bold-text">
           終了日時
           <span class="indispensable">必須</span> 閉店時間ＰＭ７：００
-          <p>注：年月日を上と同じにしてください。<br>通常の予約なら開始時間から６０分後(１時間後)に設定してください)</p>
+          <p>注：年月日を上と同じにしてください。<br>通常のカットコース予約なら開始時間から６０分後(１時間後)に設定してください)</p>
         </div>
         <%= form.datetime_select :end_date , {use_month_numbers: true, datetime_separator: '<h4 class="fb-txt font-weight-bold my-2">時間</h4>',start_hour: 9, end_hour: 19, ampm: true, minute_step: 15}, class:"select-box" %>
       </div>
