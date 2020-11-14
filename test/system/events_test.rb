@@ -20,7 +20,7 @@ class EventsTest < ApplicationSystemTestCase
     fill_in "Title", with: @event.title
     click_on "Create Event"
 
-    assert_text "Event was successfully created"
+    assert_text "予約を取り消しました。カレンダーから消えているか確認してください。"
     click_on "Back"
   end
 
@@ -34,7 +34,7 @@ class EventsTest < ApplicationSystemTestCase
     fill_in "Title", with: @event.title
     click_on "Update Event"
 
-    assert_text "Event was successfully updated"
+    assert_text "予約内容が変更されました。カレンダーに変更が反映されているか確認してください。"
     click_on "Back"
   end
 
@@ -44,6 +44,6 @@ class EventsTest < ApplicationSystemTestCase
       click_on "Destroy", match: :first
     end
 
-    assert_text "Event was successfully destroyed"
+    assert_text "予約が取り消されました。"
   end
 end

@@ -1067,7 +1067,7 @@ footer p {
 
 .items-sell-main {
   background-color: #FFF;
-  width: 70vw;
+  width: 100vw;
   min-width: 450px;
   padding: 10vh 15vw;
 }
@@ -1080,8 +1080,8 @@ footer p {
 
 .weight-bold-text {
   font-weight: bold;
-  min-width: 240px;
-  margin-bottom: 10px;
+  min-width: 320px;
+  margin: 10px 0;
 }
 
 .new-items {
@@ -1104,11 +1104,12 @@ footer p {
 }
 
 .items-detail>.form {
+  align-self: flex-end;
   width: 150px;
   padding: 10px 0;
 }
 
 .select-box {
   padding-left: 10px;
-  margin: 1vh 0;
+  margin: 5px 0;
 }

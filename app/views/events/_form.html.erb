@@ -1,7 +1,7 @@
 <%= form_with(model: event, local: true) do |form| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <h2><%= pluralize(event.errors.count, "error") %> 入力情報に誤り、もしくは未記入欄があります！</h2>
 
       <ul>
         <% event.errors.full_messages.each do |message| %>
@@ -12,7 +12,7 @@
   <% end %>
     
   <div class="items-sell-main">
-    <h2 class="items-sell-title">新規予約</h2>
+    <h2 class="items-sell-title">予約内容入力</h2>
     <div class="new-items">
       <div class="weight-bold-text">
         名前
@@ -37,8 +37,9 @@
         </div>
         <%= form.datetime_select :start_date, {use_month_numbers: true, datetime_separator: '<h4 class="fb-txt font-weight-bold my-2">時間</h4>', start_hour: 9, end_hour: 18, ampm: true, minute_step: 15}, class:"select-box" %>
         <div class="weight-bold-text">
-          終了日時(通常の予約なら開始から６０分間で設定してください)
+          終了日時
           <span class="indispensable">必須</span> 閉店時間ＰＭ７：００
+          <p>注：年月日を上と同じにしてください。<br>通常の予約なら開始時間から６０分後(１時間後)に設定してください)</p>
         </div>
         <%= form.datetime_select :end_date , {use_month_numbers: true, datetime_separator: '<h4 class="fb-txt font-weight-bold my-2">時間</h4>',start_hour: 9, end_hour: 19, ampm: true, minute_step: 15}, class:"select-box" %>
       </div>

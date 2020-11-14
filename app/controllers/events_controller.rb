@@ -29,7 +29,7 @@ class EventsController < ApplicationController
     
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: '予約の登録が出来ました。' }
+        format.html { redirect_to @event, notice: '予約が登録されました。カレンダーに予約が反映されているか確認してください。' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to @event, notice: '予約内容が変更されました。カレンダーに変更が反映されているか確認してください。' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to events_url, notice: '予約を取り消しました。カレンダーから消えているか確認してください。' }
       format.json { head :no_content }
     end
   end
@@ -75,7 +75,7 @@ class EventsController < ApplicationController
 
     def login_check
       unless user_signed_in?
-        flash[:alert] = "出品するにはログインか新規登録をしてください"
+        flash[:alert] = "予約するにはログインか新規登録をしてください"
         redirect_to new_user_session_path
       end
     end
