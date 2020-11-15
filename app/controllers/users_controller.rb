@@ -4,13 +4,18 @@ class UsersController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.new(user_params)
-      if @user.valid?
-        @user.save
-        redirect_to action: :index
+      if @user.save
+        
+        @mail = UserMailer.send_mail(@user)
+        @mail.deliver
+     
+        redirect_to root_path
       else
-        render action: :new
+        render 'new'
       end
+    end
   end
 
   def show
