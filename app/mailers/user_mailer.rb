@@ -3,7 +3,8 @@ class UserMailer < ApplicationMailer
  
   def send_mail(user)
     @user = user
+    @url = "https://art-calendar.herokuapp.com/"
     @greeting = ''
-    mail to: ENV['EMAIL_ADDRESS'], subject: 'ユーザーアカウント登録完了のお知らせ'
+    mail to: @user.email, subject: 'ユーザーアカウント登録完了のお知らせ'
   end
 end

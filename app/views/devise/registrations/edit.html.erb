@@ -8,7 +8,7 @@
 
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %><i>(メールアドレスを変更したい場合は直してください)</i><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -17,7 +17,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(現在のパスワード、もしくは変更したいパスワード)</i><br />
+    <%= f.label :password %> <i>(現在のパスワード、もしくは変更したいパスワードを入力)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
@@ -26,7 +26,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %><i>(上記と同じパスワードを入力)</i><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
