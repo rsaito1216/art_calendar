@@ -5,6 +5,6 @@ class UserMailer < ApplicationMailer
     @event = event
     @url = "https://art-calendar.herokuapp.com/"
     @greeting = ''
-    mail to: ENV['EMAIL_ADDRESS'], subject: '予約登録完了のお知らせ'
+    mail to: @event.user.email, subject: '予約登録完了のお知らせ'
   end
 end
