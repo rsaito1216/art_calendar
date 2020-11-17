@@ -27,6 +27,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    UserMailer.send_mail(@event).deliver
     
     respond_to do |format|
       if @event.save
