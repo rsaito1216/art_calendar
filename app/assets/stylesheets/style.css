@@ -1118,5 +1118,8 @@ footer p {
   font-size: 30px;
   font-weight: bold;
   color: goldenrod;
-  margin: 15px 0;
+  margin: 20px 0;
+  background: #cde4ff;
+  border-top: solid 5px #536279;
+  border-bottom: solid 5px #61718a;
 }
