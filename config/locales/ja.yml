@@ -4,5 +4,4 @@ ja:
      user:
        nickname: ニックネーム
      event:
-       text: テキスト
-       image: 画像
+       title: 名前
