@@ -27,10 +27,10 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    UserMailer.send_mail(@event).deliver
     
     respond_to do |format|
       if @event.save
+        UserMailer.send_mail(@event).deliver
         format.html { redirect_to @event, notice: '予約が登録されました。カレンダーに予約が反映されているか確認してください。' }
         format.json { render :show, status: :created, location: @event }
       else
