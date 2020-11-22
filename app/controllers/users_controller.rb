@@ -14,9 +14,9 @@ class UsersController < ApplicationController
 
   def show
     def show
-      user = User.find(params[:id])
+      @user = User.find(params[:id])
       @nickname = current_user.nickname
-      @events = user.events
+      @events = @user.events
     end
   end
 
