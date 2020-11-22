@@ -1076,6 +1076,16 @@ footer p {
   font-size: 22px;
   font-weight: bold;
   text-align: center;
+  margin: 5px 0;
+}
+
+.notice-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 8px 0;
+  display: flex;
+  color: #57C3E9;
 }
 
 .weight-bold-text {
@@ -1122,4 +1132,9 @@ footer p {
   background: #cde4ff;
   border-top: solid 5px #536279;
   border-bottom: solid 5px #61718a;
+}
+
+.reason-list-description {
+  font-size: 16px;
+  margin: 12px 0px;
 }

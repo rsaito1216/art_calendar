@@ -35,13 +35,13 @@
           開始日時
           <span class="indispensable">必須</span> 開店時間ＡＭ９：００
         </div>
-        <%= form.datetime_select :start_date, {use_month_numbers: true, datetime_separator: '<h4 class="fb-txt font-weight-bold my-2">時間</h4>', start_hour: 9, end_hour: 18, ampm: true, minute_step: 15}, class:"select-box" %>
+        <%= form.datetime_select :start_date, {datetime_separator: '<h4 class="fb-txt font-weight-bold my-2">時間</h4>', start_hour: 9, end_hour: 18, ampm: true, minute_step: 15}, class:"select-box" %>
         <div class="weight-bold-text">
           終了日時
           <span class="indispensable">必須</span> 閉店時間ＰＭ７：００
           <p>注：年月日を上と同じにしてください。<br>通常のカットコース予約なら開始時間から６０分後(１時間後)に設定してください)</p>
         </div>
-        <%= form.datetime_select :end_date , {use_month_numbers: true, datetime_separator: '<h4 class="fb-txt font-weight-bold my-2">時間</h4>',start_hour: 9, end_hour: 19, ampm: true, minute_step: 15}, class:"select-box" %>
+        <%= form.datetime_select :end_date , {datetime_separator: '<h4 class="fb-txt font-weight-bold my-2">時間</h4>', start_hour: 9, end_hour: 19, ampm: true,minute_step: 15}, class:"select-box" %>
       </div>
     </div>
     

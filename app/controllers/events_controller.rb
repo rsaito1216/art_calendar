@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :login_check, only: [:new]
   before_action :no_edit_user, only: [:edit]
+  before_action :show_login_check, only: [:show]
+  before_action :limited_user, only: [:show]
 
   # GET /events
   # GET /events.json
@@ -83,7 +85,19 @@ class EventsController < ApplicationController
     end
 
     def no_edit_user
-      if user_signed_in? && (!(current_user.id == @event.user_id))
+      if user_signed_in? && (!(current_user.id == @event.user_id)) && !current_user.admin
+        redirect_to root_path
+      end
+    end
+
+    def limited_user
+      if user_signed_in? && (!(current_user.id == @event.user_id)) && !current_user.admin
+        redirect_to root_path
+      end
+    end
+
+    def show_login_check
+      unless user_signed_in?
         redirect_to root_path
       end
     end
