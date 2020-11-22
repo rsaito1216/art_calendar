@@ -8,6 +8,6 @@
 
 User.create!(nickname:  "管理者",
              email: ENV['EMAIL_ADDRESS'],
-             password:  ENV['EMAIL_PASSWORD'],
-             password_confirmation: ENV['EMAIL_PASSWORD'],
+             password:  ENV['ADMIN_PASSWORD'],
+             password_confirmation: ENV['ADMIN_PASSWORD'],
              admin: true)
