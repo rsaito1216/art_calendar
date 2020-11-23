@@ -5,19 +5,21 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    respond_to do |format|
+        
       if @user.save
-        redirect_to root_path
+        format.html { redirect_to @event, notice: '予約が登録されました。カレンダーに予約が反映されているか確認してください。' }
+        format.json { render :show, status: :created, location: @event }
       else
         render 'new'
       end
+    end
   end
 
   def show
-    def show
-      @user = User.find(params[:id])
-      @nickname = current_user.nickname
-      @events = @user.events
-    end
+    @user = User.find(params[:id])
+    @nickname = current_user.nickname
+    @events = @user.events
   end
 
   private
